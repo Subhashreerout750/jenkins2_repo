@@ -1,8 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage
-            ("Checkout Code Stage")
+        stage("Checkout Code Stage")
             {
             
             steps {
@@ -17,8 +16,7 @@ pipeline{
             sh 'docker rmi -f myimage'
             }
         }
-        stage
-            ('build docker image')
+        stage('build docker image')
             {
             steps{
                 sh 'docker build -t myimage .'
