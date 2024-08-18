@@ -11,13 +11,13 @@ pipeline{
             ('build docker image')
             {
             steps{
-                sh 'docker buid -t myimage'
+                sh 'docker buid -t myimage .'
             }
         }
         stage('create container')
         {
             steps{
-                sh 'docker run -d -p 8501:8501 myimage'
+                sh 'docker run -d -p 8501:8501 myimage '
             }
 
         }
