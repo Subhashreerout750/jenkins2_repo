@@ -8,6 +8,13 @@ pipeline{
                 git url:'https://github.com/Subhashreerout750/jenkins2_repo.git',branch:'main'
             }
         }
+        stage("Cleanup Stage")
+        {
+            steps{
+            sh 'docker rm -f $(docker ps -aq)'
+            sh 'docker rmi -f myimage'
+            }
+        }
         stage
             ('build docker image')
             {
