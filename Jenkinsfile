@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage
-            ("Checkout Code Stages")
+            ("Checkout Code Stage")
             {
             
             steps {
@@ -21,7 +21,7 @@ pipeline{
             ('build docker image')
             {
             steps{
-                sh 'docker buid -t myimage .'
+                sh 'docker build -t myimage .'
             }
         }
         stage('create container')
